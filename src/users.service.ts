@@ -6,18 +6,18 @@ import { CreateUserParams } from './utils/types/types';
 import { UsersRepository } from './users.repository';
 @Injectable()
 export class UsersService {
-    constructor(@InjectRepository(User) private userRepository: UsersRepository) { }
+    constructor(@InjectRepository(User) private userRepository1: UsersRepository) { }
 
     async findOne(username: string): Promise<User | undefined> {
-        return this.userRepository.findOne({ where: { username } });
+        return this.userRepository1.findOne({ where: { username } });
     }
 
     async findAll(): Promise<User[]> {
-        return this.userRepository.find();
+        return this.userRepository1.find();
     }
 
     createUser(userDetails: CreateUserParams) {
-        const newUser = this.userRepository.create({ ...userDetails, createdAt: new Date() });
-        return this.userRepository.save(newUser);
+        const newUser = this.userRepository1.create({ ...userDetails, createdAt: new Date() });
+        return this.userRepository1.save(newUser);
     }
 }
