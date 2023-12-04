@@ -1,5 +1,5 @@
 {
-  "name": "@issue/user",
+  "name": "@pietro/user",
   "version": "0.0.1",
   "main": "dist/index.js",
   "scripts": {
